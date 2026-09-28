@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ETE Palmares | Calculadora de Médias</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="marca">
+            <img src="Imagens/logo.png" alt="Logo ETE Palmares">
+
+            <div>
+                <h1>ETE PALMARES</h1>
+                <span>Sistema Acadêmico</span>
+            </div>
+        </div>
+
+        <div class="status">
+            <span class="status-ponto"></span>
+            Sistema online
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- CABEÇALHO -->
+
+        <section class="hero">
+
+            <div>
+                <span class="tag">CALCULADORA ACADÊMICA</span>
+
+                <h2>
+                    Calculadora de
+                    <strong>médias</strong>
+                </h2>
+
+                <p>
+                    Organize suas notas, calcule médias ponderadas
+                    e acompanhe seu desempenho acadêmico.
+                </p>
+            </div>
+
+            <div class="hero-icon">
+                📊
+            </div>
+
+        </section>
+
+
+        <!-- DADOS DO ALUNO -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div class="section-number">01</div>
+
+                <div>
+                    <h3>Dados do estudante</h3>
+                    <p>Preencha as informações acadêmicas</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="campo campo-grande">
+                    <label for="aluno">Nome do aluno</label>
+                    <input
+                        type="text"
+                        id="aluno"
+                        placeholder="Digite o nome completo"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="turma">Turma</label>
+                    <input
+                        type="text"
+                        id="turma"
+                        placeholder="Ex.: 2º TDS B"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="ano">Ano letivo</label>
+                    <select id="ano">
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONFIGURAÇÃO -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div class="section-number">02</div>
+
+                <div>
+                    <h3>Configuração das avaliações</h3>
+                    <p>Defina as notas e os pesos utilizados no cálculo</p>
+                </div>
+
+            </div>
+
+
+            <div class="pesos">
+
+                <div class="peso">
+
+                    <div>
+                        <strong>1ª Avaliação</strong>
+                        <small>Nota máxima: 10</small>
+                    </div>
+
+                    <input
+                        type="number"
+                        class="peso-input"
+                        value="1"
+                        min="0"
+                        step="0.1"
+                    >
+
+                </div>
+
+
+                <div class="peso">
+
+                    <div>
+                        <strong>2ª Avaliação</strong>
+                        <small>Nota máxima: 10</small>
+                    </div>
+
+                    <input
+                        type="number"
+                        class="peso-input"
+                        value="1"
+                        min="0"
+                        step="0.1"
+                    >
+
+                </div>
+
+
+                <div class="peso">
+
+                    <div>
+                        <strong>3ª Avaliação</strong>
+                        <small>Nota máxima: 10</small>
+                    </div>
+
+                    <input
+                        type="number"
+                        class="peso-input"
+                        value="1"
+                        min="0"
+                        step="0.1"
+                    >
+
+                </div>
+
+
+                <div class="peso">
+
+                    <div>
+                        <strong>4ª Avaliação</strong>
+                        <small>Nota máxima: 10</small>
+                    </div>
+
+                    <input
+                        type="number"
+                        class="peso-input"
+                        value="1"
+                        min="0"
+                        step="0.1"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DISCIPLINAS -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div class="section-number">03</div>
+
+                <div>
+                    <h3>Disciplinas</h3>
+                    <p>Adicione as disciplinas e informe suas notas</p>
+                </div>
+
+            </div>
+
+
+            <div id="disciplinas"></div>
+
+
+            <button
+                class="btn-adicionar"
+                id="adicionarDisciplina"
+            >
+                <span>＋</span>
+                Adicionar disciplina
+            </button>
+
+        </section>
+
+
+        <!-- BOTÕES -->
+
+        <div class="acoes">
+
+            <button
+                class="btn-limpar"
+                id="limpar"
+            >
+                🗑 Limpar dados
+            </button>
+
+            <button
+                class="btn-calcular"
+                id="calcular"
+            >
+                Calcular médias
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <!-- RESULTADOS -->
+
+        <section
+            class="resultado"
+            id="resultado"
+        >
+
+            <div class="resultado-header">
+
+                <div>
+                    <span class="tag">RESULTADO ACADÊMICO</span>
+
+                    <h2>Desempenho do estudante</h2>
+
+                    <p id="nomeResultado">
+                        Informe os dados e calcule suas médias.
+                    </p>
+                </div>
+
+                <div
+                    class="situacao"
+                    id="situacaoGeral"
+                >
+                    Aguardando cálculo
+                </div>
+
+            </div>
+
+
+            <div class="estatisticas">
+
+                <div class="estatistica">
+
+                    <span>📚</span>
+
+                    <div>
+                        <small>Disciplinas</small>
+                        <strong id="totalDisciplinas">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="estatistica">
+
+                    <span>📈</span>
+
+                    <div>
+                        <small>Média geral</small>
+                        <strong id="mediaGeral">--</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="estatistica">
+
+                    <span>🏆</span>
+
+                    <div>
+                        <small>Maior média</small>
+                        <strong id="maiorMedia">--</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="estatistica">
+
+                    <span>⚠️</span>
+
+                    <div>
+                        <small>Menor média</small>
+                        <strong id="menorMedia">--</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="barra-container">
+
+                <div class="barra-info">
+                    <span>Desempenho geral</span>
+                    <strong id="porcentagem">0%</strong>
+                </div>
+
+                <div class="barra">
+                    <div
+                        id="barraProgresso"
+                        class="barra-progresso"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Disciplina</th>
+                            <th>Nota 1</th>
+                            <th>Nota 2</th>
+                            <th>Nota 3</th>
+                            <th>Nota 4</th>
+                            <th>Média</th>
+                            <th>Situação</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tabelaResultados"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <img src="Imagens/logo.png" alt="ETE Palmares">
+
+        <div>
+            <strong>ETE PALMARES</strong>
+            <span>Sistema de cálculo acadêmico</span>
+        </div>
+
+        <span class="copyright">
+            © 2026
+        </span>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
